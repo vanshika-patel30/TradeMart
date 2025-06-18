@@ -1,0 +1,164 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Outfit', sans-serif;
+}
+
+body {
+  background-image: url(logos/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 100vh;
+  padding: 30px;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  background-color: #FFFFCC;
+}
+
+header {
+  text-align: center;
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center;
+  padding: 8px 16px;
+}
+
+h2 {
+  font-size: 28px;
+}
+
+.back-btn {
+  background-color: transparent;
+  color: #5AB273;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 18px;
+  padding: 8px 16px;
+  transition: background-color 0.3s;
+}
+
+.back-btn:hover {
+  background-color: #5AB273;
+  color: #fff;
+}
+
+.summary {
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  padding: 15px;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  margin-top: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+th, td {
+  padding: 14px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #5AB273;
+  color: #fff;
+}
+
+tr {
+  background-color: white
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    padding: 15px 10px;
+    margin: 10px;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px 0;
+  }
+
+  h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  .back-btn {
+    font-size: 16px;
+    padding: 6px 12px;
+  }
+
+  table, thead, tbody, th, td, tr {
+    display: block;
+    width: 100%;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tr {
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: white;
+  }
+
+  td {
+    text-align: left;
+    padding: 10px;
+    border: none;
+    position: relative;
+  }
+
+  td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+  }
+
+  select, button {
+    width: 100%;
+    margin-top: 8px;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+  .container {
+    padding: 20px 15px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  .back-btn {
+    font-size: 17px;
+    padding: 7px 14px;
+  }
+
+  table {
+    font-size: 15px;
+  }
+
+  select, button {
+    font-size: 13px;
+  }
+}

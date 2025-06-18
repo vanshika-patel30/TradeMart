@@ -1,0 +1,422 @@
+* {
+    font-family: "Oswald", sans-serif; 
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    padding: 10px 30px;
+    background:  #FFFFCC;
+    flex-wrap: nowrap;
+    gap: 20px;
+}
+
+.logo img {
+    width: auto; 
+    max-width: 90%;
+    height: auto; 
+    max-height: 60px;
+    display: block; 
+}
+
+.logo {
+    flex: 0 0 auto;
+}
+
+nav {
+    flex-grow: 1;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    color: black;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #009966;
+}
+
+.header-buttons {
+    display: flex;
+    gap: 10px;
+    flex: 0 0 auto;
+}
+
+.trading-btn {
+    padding: 8px 16px;
+    background-color: #5AB273;
+    color: black;
+    font-weight: bold;
+    font-size: 24px;
+    border-color: #009966;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+}
+
+.profile-btn {
+    background: transparent;
+    border: none;
+    color: black;
+    padding: 8px 12px;
+    font-size: 40px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    padding-top: 60px;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.modal-logo {
+    height: 60px;
+    width: auto;   
+}
+
+.modal h2 {
+    margin: auto;
+    font-size: 32px;
+    color: #009966;
+    letter-spacing: 4px;
+    text-decoration: underline;
+}
+
+.modal p {
+    font-weight: 400;
+    font-size: 20px;
+    margin: 15px 0;
+}
+
+.modal h3 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.modal-content {
+    background-color: #FFFFCC;
+    margin: 8% auto;
+    padding: 30px 40px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+}
+
+.close {
+    color: black;
+    position: absolute;
+    float: right;
+    font-weight: bold;
+    top: 12px;
+    right: 18px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.signup-btn, .login-btn {
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #009966;
+    color: white;
+    border-color: #006666;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.signup-btn:hover, .login-btn:hover {
+    background-color: #006666;
+}
+
+.heading {
+    text-align: center;
+    margin: 10px 0;
+    font-size: 40px;
+    color: #5AB273;
+    letter-spacing : 10px;
+    padding-top: 0px;
+}
+
+ .main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.slideshow {
+    position: relative;
+    max-width: 100%;
+    margin: 10px auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(90, 178, 115, 0.3);
+    aspect-ratio: 3264 / 2175;
+}
+
+.slide {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.slide.active {
+    display: block;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade {
+    animation: fade 0.5s ease-in-out;
+}
+
+@keyframes fade {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}
+
+.welcome {
+    text-align: center;
+    padding: 20px;
+}
+
+.welcome h2 {
+    font-size: 40px;
+    font-style: italic;
+}
+
+.welcome p{
+    font-size: 25px;
+}
+
+.welcome ul {
+    font-size: 25px;
+    list-style: disc;
+    list-style-position: inside;
+    padding-left: 0px;
+    margin: 5px 0;
+    display: inline-block;
+}
+
+.welcome ul li {
+    margin: 2px 0;
+    padding-left: 0px;
+}
+
+footer {
+    background-color: #FFFFCC;
+    padding: 40px 60px 20px;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-left, .footer-right, .footer-center {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-left img {
+    left: 0;
+    width: 85px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+footer ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin: 10px 0;
+}
+
+footer ul li {
+    margin-bottom: 5px;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #009966;
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+}
+
+@media only screen and (max-width: 600px) {
+  
+  .container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 15px 10px;
+  }
+
+  .logo {
+    margin-bottom: 10px;
+  }
+
+ .logo img {
+    height: auto;
+    width: auto;
+    max-height: 80px;
+    display: block;
+}
+
+ nav {
+    width: 100%;
+ }
+
+  nav ul {
+    flex-direction: row;
+    flex-wrap: wrap ;
+    gap: 15px;
+    justify-content: center;
+    padding: 0;
+    margin: 10px 0;
+  }
+
+  nav ul li a {
+    font-size: 18px;
+  }
+
+  .header-buttons {
+    margin-top: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .trading-btn {
+    font-size: 18px;
+    padding: 10px 12px;
+  }
+
+  .profile-btn {
+    font-size: 30px;
+    padding: 6px 10px;
+  }
+
+  .slideshow {
+    max-width: 100%;
+    gap: 5px;
+  }
+
+  .heading {
+    font-size: 20px;
+    letter-spacing: 4px;
+  }
+
+  .welcome h2 {
+    font-size: 28px;
+  }
+  
+  .welcome p,
+  .welcome ul {
+    font-size: 18px;
+  }
+
+  footer {
+    flex-direction: column;
+    padding: 30px 15px;
+    gap: 25px;
+    font-size: 16px;
+  }
+
+  .footer-left,
+  .footer-center,
+  .footer-right {
+    min-width: auto;
+    text-align: center;
+  }
+
+  .footer-left {
+    justify-content: center;
+  }
+
+  .footer-left img {
+    margin: 0 auto 10px auto;
+  }
+
+  .footer-bottom {
+    margin-top: 20px;
+    font-size: 14px;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+  .container {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  nav ul {
+    gap: 40px;
+  }
+
+  .header-buttons {
+    margin-left: 20px;
+  }
+
+  .logo img {
+    height: auto;
+    width: auto;
+    max-height: 60px;
+    display: block;
+}
+}

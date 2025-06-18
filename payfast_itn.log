@@ -1,0 +1,116 @@
+{
+    "timestamp": "2025-06-14 10:58:39",
+    "method": "POST",
+    "post_data": {
+        "m_payment_id": "TM_1_1749891507",
+        "pf_payment_id": "2576765",
+        "payment_status": "COMPLETE",
+        "item_name": "Order Payment - 1 orders",
+        "item_description": "Payment for orders: 7",
+        "amount_gross": "180.00",
+        "amount_fee": "-4.14",
+        "amount_net": "175.86",
+        "custom_str1": "1",
+        "custom_str2": "7",
+        "custom_str3": "TradeMart_Payment",
+        "custom_str4": "",
+        "custom_str5": "",
+        "custom_int1": "",
+        "custom_int2": "",
+        "custom_int3": "",
+        "custom_int4": "",
+        "custom_int5": "",
+        "name_first": "Vanshika Patel",
+        "name_last": "Name",
+        "email_address": "vanshikapatel30@gmail.com",
+        "merchant_id": "10039489",
+        "signature": "0bed3869bebd63e5e31dbb9c58039643"
+    },
+    "get_data": [],
+    "headers": {
+        "Host": "3a39-41-71-41-251.ngrok-free.app",
+        "User-Agent": "Mozilla\/5.0 (Windows NT 10.0; WOW64; rv:48.0) Gecko\/20100101 Firefox\/48.0",
+        "Content-Length": "501",
+        "Accept": "*\/*",
+        "Content-Type": "application\/x-www-form-urlencoded",
+        "Referer": "https:\/\/www.payfast.co.za",
+        "X-Forwarded-For": "144.126.193.139",
+        "X-Forwarded-Host": "3a39-41-71-41-251.ngrok-free.app",
+        "X-Forwarded-Proto": "https",
+        "Accept-Encoding": "gzip"
+    }
+}
+Extracted - User: 1, Orders: 7, Status: COMPLETE
+ERROR: Unknown column 'payment_date' in 'field list'
+{
+    "timestamp": "2025-06-14 11:00:50",
+    "method": "POST",
+    "post_data": {
+        "m_payment_id": "TM_1_1749891636",
+        "pf_payment_id": "2576767",
+        "payment_status": "COMPLETE",
+        "item_name": "Order Payment - 2 orders",
+        "item_description": "Payment for orders: 8, 7",
+        "amount_gross": "410.00",
+        "amount_fee": "-9.43",
+        "amount_net": "400.57",
+        "custom_str1": "1",
+        "custom_str2": "8,7",
+        "custom_str3": "TradeMart_Payment",
+        "custom_str4": "",
+        "custom_str5": "",
+        "custom_int1": "",
+        "custom_int2": "",
+        "custom_int3": "",
+        "custom_int4": "",
+        "custom_int5": "",
+        "name_first": "Vanshika Patel",
+        "name_last": "Name",
+        "email_address": "vanshikapatel30@gmail.com",
+        "merchant_id": "10039489",
+        "signature": "1b9a5068cb97b4d08faef1d459952d75"
+    },
+    "get_data": [],
+    "headers": {
+        "Host": "3a39-41-71-41-251.ngrok-free.app",
+        "User-Agent": "Mozilla\/5.0 (Windows NT 10.0; WOW64; rv:48.0) Gecko\/20100101 Firefox\/48.0",
+        "Content-Length": "510",
+        "Accept": "*\/*",
+        "Content-Type": "application\/x-www-form-urlencoded",
+        "Referer": "https:\/\/www.payfast.co.za",
+        "X-Forwarded-For": "144.126.193.139",
+        "X-Forwarded-Host": "3a39-41-71-41-251.ngrok-free.app",
+        "X-Forwarded-Proto": "https",
+        "Accept-Encoding": "gzip"
+    }
+}
+Extracted - User: 1, Orders: 8,7, Status: COMPLETE
+ERROR: Unknown column 'payment_date' in 'field list'
+ITN received at 2025-06-14 14:43:28
+POST data: Array
+(
+    [m_payment_id] => TM_1_1749904910
+    [pf_payment_id] => 2576865
+    [payment_status] => COMPLETE
+    [item_name] => Order Payment - 2 orders
+    [item_description] => Payment for orders: 20, 6
+    [amount_gross] => 300.00
+    [amount_fee] => -6.90
+    [amount_net] => 293.10
+    [custom_str1] => 1
+    [custom_str2] => 20,6
+    [custom_str3] => 12,11
+    [custom_str4] => TradeMart_Payment
+    [custom_str5] => 
+    [custom_int1] => 
+    [custom_int2] => 
+    [custom_int3] => 
+    [custom_int4] => 
+    [custom_int5] => 
+    [name_first] => Vanshika Patel
+    [name_last] => 
+    [email_address] => vanshikapatel30@gmail.com
+    [merchant_id] => 10039489
+    [signature] => 50bd337e6743de65c858d9efadfd5d40
+)
+

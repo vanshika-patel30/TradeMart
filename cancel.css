@@ -1,0 +1,155 @@
+* {
+    font-family: 'Oswald', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-image: url(logos/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    min-height: 100vh;
+}
+
+.container {
+    background-color:#c3e6cb;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.cancel-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    border: 1px solid #f5c6cb;
+}
+
+.cancel-message i {
+    font-size: 30px;
+    color: red;
+}
+
+.btn-section {
+  text-align: center; 
+  margin-top: 30px 
+}
+
+.btn-payment, .btn-order, .btn-product {
+    background-color: #228B22;
+    color: white;
+    font-weight: bold;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+    display: inline-block;
+    margin: 10px;
+}
+
+.btn-payment:hover, .btn-order:hover, .btn-product:hover {
+    background-color: #5AB273;
+    color: white;
+}
+
+.btn-order, .btn-product {
+    background-color: #FFFFCC;
+    margin-left: 10px;
+    color: black;
+}
+
+.info-box {
+    background-color: #FFFFCC;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 20px 0;
+    text-align: left;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    padding: 15px 10px;
+    max-width: 100%;
+    background-size: contain; 
+  }
+
+  .container {
+    padding: 20px 15px;
+  }
+
+  .cancel-message {
+    padding: 15px;
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+
+  .cancel-message i {
+    font-size: 24px;
+  }
+
+  .btn-payment, .btn-order, .btn-product {
+    display: block;
+    width: 100%;
+    max-width: 280px;
+    margin: 10px auto;
+    padding: 12px 0;
+    font-size: 15px;
+  }
+
+  .btn-order, .btn-product {
+    margin-left: 0;
+  }
+
+  .info-box {
+    font-size: 14px;
+    padding: 12px 15px;
+  }
+}
+
+/* Tablets (601px - 900px) */
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+  body {
+    padding: 20px;
+    max-width: 100%;
+    background-size: cover;
+  }
+
+  .container {
+    padding: 25px 20px;
+  }
+
+  .cancel-message {
+    padding: 18px;
+    margin-bottom: 25px;
+    font-size: 15px;
+  }
+
+  .cancel-message i {
+    font-size: 28px;
+  }
+
+  .btn-payment, .btn-order, .btn-product {
+    font-size: 16px;
+    padding: 12px 25px;
+    max-width: 320px;
+    margin: 10px auto;
+    display: inline-block;
+  }
+
+  .btn-order, .btn-product {
+    margin-left: 10px;
+  }
+
+  .info-box {
+    font-size: 15px;
+    padding: 14px 18px;
+  }
+}

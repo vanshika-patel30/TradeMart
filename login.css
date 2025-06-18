@@ -1,0 +1,303 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Outfit", sans-serif;
+}
+
+body {
+  background-color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh; 
+}
+
+header {
+  background-color: #5AB273;
+  text-align: center;
+  padding: 0px;
+  width: 100%;
+  height: 100px;
+}
+
+header img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  height: 85%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-section {
+  background-color: #FFFFCC;
+  flex: 1;
+  padding: 30px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+}
+
+.welcome-section h1,
+.welcome-section h2 {
+  font-family: "Oswald", sans-serif;
+  font-size: 48px;
+  font-weight: bold;
+  color: black;
+  margin: 10px 0;
+  letter-spacing: 2px;
+}
+
+.welcome-section p {
+  font-family: "Outfit", sans-serif;
+  font-size: 36px;
+  color: black;
+  margin: 10px 0;
+  font-weight: 500;
+}
+
+.welcome-section .bi {
+  font-size: 60px;
+  margin-top: 40px;
+  color: black;
+}
+
+.form-section {
+  flex: 1;
+  background-color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  text-align: center;
+}
+
+form {
+  background-color: #5AB273;
+  padding: 70px;
+  border-radius: 10px;
+  width: 450px;
+  height: 520px;
+}
+
+.form-info {
+  margin-bottom: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.form-info label {
+  display: block;
+  color: white;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.input-icon {
+  display: flex;
+  align-items: center;
+  background-color: lemonchiffon;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.input-icon i {
+  padding: 10px 10px;
+  font-size: 25px;
+  color: #333;
+}
+
+.form-info input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  font-size: 18px;
+}
+
+.form-info input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.toggle-Password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 25px;
+}
+
+.toggle-Password:hover {
+  color: black;
+}
+
+form p {
+  color: #CC0000;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+button {
+  padding: 15px;
+  margin-top: 5px;
+  width: 60%;
+  height: auto;
+  background-color: #FFFFCC;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+button:hover {
+  font-weight: 800;
+  border: 2px solid black;
+  text-decoration: underline;
+}
+
+.error {
+  color: #CC0000	;
+  font-size: 16px;
+  font-weight: 500;
+  display: none;
+  margin-top: 5px;
+  margin-left: 2px;
+  transition: all 0.3s ease;
+} 
+
+.login-toast {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: lemonchiffon;
+  color: black;
+  padding: 15px 25px;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  display: none;
+  animation: fadeInOut 2s ease-in-out;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateX(-50%) translateY(-10px); }
+  10% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  90% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .welcome-section,
+  .form-section {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .welcome-section h1,
+  .welcome-section h2 {
+    font-size: 28px;
+  }
+
+  .welcome-section p {
+    font-size: 16px;
+  }
+
+  .welcome-section .bi {
+    font-size: 32px;
+    margin-top: 20px;
+  }
+
+  form {
+    width: 90%;
+    padding: 30px;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .input-icon {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .input-icon input {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  button {
+    width: 100%;
+    font-size: 18px;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .welcome-section,
+  .form-section {
+    width: 100%;
+    padding: 30px;
+    text-align: center;
+  }
+
+  .form-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  form {
+    width: 80%;
+    max-width: 400px;
+    padding: 40px;
+    height: auto;
+  }
+
+  .welcome-section h1 {
+    font-size: 32px;
+  }
+
+  .welcome-section h2 {
+    font-size: 24px;
+  }
+
+  .welcome-section p {
+    font-size: 18px;
+  }
+
+  .welcome-section .bi {
+    font-size: 40px;
+    margin-top: 30px;
+  }
+
+  button {
+    width: 100%;
+    font-size: 18px;
+  }
+}

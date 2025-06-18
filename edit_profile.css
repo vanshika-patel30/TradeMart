@@ -1,0 +1,187 @@
+* {
+  font-family: "Outfit", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(logos/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+}
+
+.edit-profile-toast { 
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px 25px;
+  border-radius: 8px;
+  font-weight: bold;
+  display: none;
+  z-index: 9999;
+}
+
+.close-modal {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+  z-index: 1001;
+}
+
+.close-modal:hover {
+  font-weight: bold;
+}
+
+.profile-modal {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: 60px auto;
+  padding: 40px 40px;
+  background-color: #FFFFCC;
+  border: solid 2px;
+  border-radius: 12px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.profile-modal h1 {
+  font-size: 38px;
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+.form-info {
+  margin-bottom: 18px;
+}
+
+.label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: #5CAB73;
+}
+
+.password-icon {
+  position: relative;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #777;
+}
+
+.error {
+  display: none;
+  font-size: 13px;
+  color: #dc3545;
+  margin-top: 6px;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 12px 18px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #5CAB73;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #006666;
+}
+
+@media only screen and (max-width: 600px) {
+  .profile-modal {
+    width: 95%;
+    max-width: none;
+    margin: 20px auto;
+    padding: 20px 15px;
+    box-sizing: border-box;
+  }
+
+  .profile-modal h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+
+  button[type="submit"] {
+    font-size: 15px;
+    padding: 10px 14px;
+  }
+
+  .close-modal {
+    top: 10px;
+    right: 12px;
+    font-size: 20px;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+  .profile-modal {
+    width: 85%;
+    padding: 30px 25px;
+  }
+
+  .profile-modal h1 {
+    font-size: 30px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    font-size: 15px;
+    padding: 10px 12px;
+  }
+
+  button[type="submit"] {
+    font-size: 16px;
+    padding: 12px 16px;
+  }
+
+  .close-modal {
+    font-size: 22px;
+    top: 15px;
+    right: 18px;
+  }
+}
