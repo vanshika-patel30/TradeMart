@@ -9,8 +9,9 @@
     justify-content:space-between;
     padding: 10px 30px;
     background:  #FFFFCC;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     gap: 20px;
+    width: 100%;
 }
 
 .logo img {
@@ -35,7 +36,7 @@ nav ul {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 80px;
+    gap: 50px;
     padding: 0;
     margin: 0;
 }
@@ -298,24 +299,27 @@ footer a:hover {
 }
 
 @media only screen and (max-width: 600px) {
-  
   .container {
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     text-align: center;
-    padding: 15px 10px;
+    padding: 0; /* Remove all padding for full width */
+    width: 100vw; /* Full viewport width */
   }
 
   .logo {
-    margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
   }
 
- .logo img {
+  .logo img {
+    width: 100%;
     height: auto;
-    width: auto;
-    max-height: 80px;
+    max-width: none;
     display: block;
-}
+    margin: 0 auto;
+  }
 
  nav {
     width: 100%;
@@ -335,21 +339,23 @@ footer a:hover {
   }
 
   .header-buttons {
-    margin-top: 10px;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-  }
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+    }
 
   .trading-btn {
-    font-size: 18px;
-    padding: 10px 12px;
-  }
+    font-size: 16px;
+    padding: 8px 16px;
+    }
 
   .profile-btn {
-    font-size: 30px;
-    padding: 6px 10px;
-  }
+    font-size: 28px;
+    }
+
 
   .slideshow {
     max-width: 100%;
