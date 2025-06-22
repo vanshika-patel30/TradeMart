@@ -304,8 +304,8 @@ footer a:hover {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 0; /* Remove all padding for full width */
-    width: 100vw; /* Full viewport width */
+    padding: 0; 
+    width: 100vw; 
   }
 
   .logo {
