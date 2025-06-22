@@ -142,7 +142,6 @@ header h1 {
     border: 2px solid;
 }
 
-
 ul {
     list-style: none;
     padding: 0;
@@ -294,10 +293,14 @@ li a:hover {
     display: flex;
     gap: 20px;
     align-items: flex-start;
+    max-height:  80vh;
+    overflow-y: auto;
 }
 
 .modal-content img {
+    width: 100%;
     max-width: 250px;
+    height: auto;
     border-radius: 12px;
 }
 
