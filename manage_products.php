@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["delete_product_id"]))
 }
 
 $stmt = "
-    SELECT p.product_id, p.product_name, p.price, p.description, p.image, u.name AS seller_name
+    SELECT p.product_id, p.product_name, p.price, p.description, p.image, p.created_at, u.name AS seller_name
     FROM products p
     JOIN users u ON p.seller_id = u.user_id
 ";
@@ -84,7 +84,17 @@ while ($row = $result->fetch_assoc()) {
                             <td data-label="Seller"><?= htmlspecialchars($product['seller_name']) ?></td>
                             <td><img src="<?= $encodedImagePath ?>" class="product-image" alt="Product Image"></td>
                             <td>
-                                <a href="edit_product.php?product_id=<?= $product['product_id'] ?>" class="action-btn edit-btn">Edit</a>
+                               <button 
+                                    class="action-btn view-btn product-card"
+                                    data-image="<?= htmlspecialchars($encodedImagePath) ?>" 
+                                    data-name="<?= htmlspecialchars($product['product_name']) ?>" 
+                                    data-description="<?= htmlspecialchars($product['description']) ?>" 
+                                    data-price="<?= htmlspecialchars($product['price']) ?>" 
+                                    data-seller="<?= htmlspecialchars($product['seller_name']) ?>" 
+                                    data-date="<?= htmlspecialchars(date('d-m-Y', strtotime($product['created_at']))) ?>"
+                                    data-id="<?= (int)$product['product_id'] ?>">
+                                    View
+                                </button>
                                 <button class="action-btn delete-btn" onclick="openModal(<?= $product['product_id'] ?>)">Delete</button>
                             </td>
                         </tr>   
@@ -92,19 +102,67 @@ while ($row = $result->fetch_assoc()) {
             </tbody>
         </table>
 
+        <div id="modal" class="product-modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <img id="modal-img" src="" alt="Product Image">
+                <div class="product-details">
+                    <h4 id="modal-product"></h4>
+                    <p id="modal-description"></p>
+                    <h5 id="modal-price"></h5>
+                    <p id="modal-date"></p>
+                    <p id="modal-seller"></p>
+                </div>
+            </div>
+        </div>
+
         <div class="modal" id="deleteModal">
             <div class="modal-content">
                 <p>Are you sure you want to delete this product?</p>
                 <form method="POST" id="deleteForm">
                     <input type="hidden" name="delete_product_id" id="delete_product_id">
                     <button type="submit" class="confirm-btn">Yes, Delete</button>
-                    <button type="button" class="cancel-btn" onclick="closeModal()">Cancel</button>
+                    <button type="button" class="cancel-btn" onclick="closeDeleteModal()">Cancel</button>
                 </form>
             </div>
         </div>
     </div>
 
     <script>
+        $('.product-card').on('click', function(e) {
+            const $this = $(this);
+            const image = $this.data('image');
+            const name = $this.data('name');
+            const description = $this.data('description');
+            const price = $this.data('price');
+            const seller = $this.data('seller');
+            const date = $this.data('date');
+            const productId = $this.data('id');
+
+            if (!image || !name || !description || !price || !seller || !date || !productId) {
+                alert("Error opening product details.");
+                return;
+            }
+
+            $('#modal-img').attr("src", image);
+            $('#modal-product').text(name);
+            $('#modal-description').text(description);
+            $('#modal-price').text("R" + parseFloat(price).toFixed(2));
+            $('#modal-seller').text("Listed by: " + seller);
+            $('#modal-date').text("Listed on: " + date);
+            $('#modal').addClass('show').fadeIn();
+        });
+
+        $('.close-btn').on('click', function() {
+            $('#modal').removeClass('show').fadeOut();
+        });
+
+        $(window).on('click', function(e) {
+            if ($(e.target).is('#modal')) {
+                $('#modal').removeClass('show').fadeOut();
+            }
+        });
+
         const deleteModal = document.getElementById("deleteModal");
         const deleteProductIdInput = document.getElementById("delete_product_id");
 
@@ -124,18 +182,15 @@ while ($row = $result->fetch_assoc()) {
         });
 
         <?php if (!empty($toast_message)): ?>
-        const toast = document.getElementById('toast');
-        toast.textContent = "<?= $toast_message ?>";
-        toast.style.backgroundColor = <?= $toast_success ? "'lemonchiffon'" : "'#ffcccc'" ?>;
-        toast.style.color = <?= $toast_success ? "'black'" : "'#8a1f1f'" ?>;
-        toast.style.display = 'block';
+            const toast = document.getElementById('toast');
+            toast.textContent = "<?= $toast_message ?>";
+            toast.style.backgroundColor = <?= $toast_success ? "'lemonchiffon'" : "'#ffcccc'" ?>;
+            toast.style.color = <?= $toast_success ? "'black'" : "'#8a1f1f'" ?>;
+            toast.style.display = 'block';
 
-        setTimeout(() => {
-            toast.style.display = 'none';
-        }, 2000);
-        if (window.history.replaceState) {
-            window.history.replaceState(null, null, window.location.href.split("?")[0]);
-        }
+            setTimeout(() => {
+                toast.style.display = 'none';
+            }, 2000);
         <?php endif; ?>
     </script>
 </body>
