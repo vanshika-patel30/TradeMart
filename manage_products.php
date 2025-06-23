@@ -14,16 +14,32 @@ $toast_message = "";
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["delete_product_id"])) {
     $delete_id = $_POST["delete_product_id"];
 
-    $delete = $conn->prepare("DELETE FROM products WHERE product_id = ?");
-    $delete->bind_param("i", $delete_id);
+    $check_stmt = $conn->prepare("SELECT 1 FROM order_items WHERE product_id = ?");
+    $check_stmt->bind_param("i", $delete_id);
+    $check_stmt->execute();
+    $check_result = $check_stmt->get_result();
 
-    if ($delete->execute()) {
-        $toast_message = "Product deleted successfully.";
-        $toast_success = true;
-    } else {
-        $toast_message = "Error deleting product.";
+    if ($check_result->num_rows > 0) {
         $toast_success = false;
+        $toast_message = "Cannot delete: Product has existing orders.";
+    } else {
+        $delete_stmt = $conn->prepare("DELETE FROM products WHERE product_id = ?");
+        $delete_stmt->bind_param("i", $delete_id);
+        if ($delete_stmt->execute()) {
+            header("Location: manage_products.php?deleted=1");
+            exit;
+        } else {
+            $toast_success = false;
+            $toast_message = "Failed to delete product.";
+        }
+        $delete_stmt->close();
     }
+    $check_stmt->close();
+}
+
+if (isset($_GET['deleted']) && $_GET['deleted'] == 1) {
+    $toast_success = true;
+    $toast_message = "Product deleted successfully.";
 }
 
 $stmt = "
@@ -117,7 +133,7 @@ while ($row = $result->fetch_assoc()) {
         </div>
 
         <div class="modal" id="deleteModal">
-            <div class="modal-content">
+            <div class="delete-modal-content">
                 <p>Are you sure you want to delete this product?</p>
                 <form method="POST" id="deleteForm">
                     <input type="hidden" name="delete_product_id" id="delete_product_id">
@@ -171,7 +187,7 @@ while ($row = $result->fetch_assoc()) {
             deleteModal.style.display = "flex";
         }
 
-        function closeModal() {
+        function closeDeleteModal() {
             deleteModal.style.display = "none";
         }
 
