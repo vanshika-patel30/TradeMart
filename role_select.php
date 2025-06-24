@@ -47,10 +47,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['role'])) {
     <div class="background">
         <div id="selectModal" class="modal">
             <div class="modal-content">
+                <a href="index.php" class="log-out"><i class="bi bi-arrow-bar-left"></i>Log Out</a>
                 <div class="modal-header">
                     <img src="logos/small_logo.png" alt="TradeMart Logo" class="modal-logo">
                     <h2>WELCOME TO TRADEMART!</h2>
-                    <a href="index.php" class="log-out"><i class="bi bi-arrow-bar-left"></i>Log Out</a>
                 </div>
                 <h3>Hi, <?php echo $name; ?>!</h3>
                 <br>
