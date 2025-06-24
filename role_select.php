@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['role'])) {
     <title>Select Your User Role</title>
     <link rel="stylesheet" href="role_select.css">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 <body>
     <div class="background">
@@ -50,6 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['role'])) {
                 <div class="modal-header">
                     <img src="logos/small_logo.png" alt="TradeMart Logo" class="modal-logo">
                     <h2>WELCOME TO TRADEMART!</h2>
+                    <a href="index.php" class="log-out"><i class="bi bi-arrow-bar-left"></i>Log Out</a>
                 </div>
                 <h3>Hi, <?php echo $name; ?>!</h3>
                 <br>
@@ -63,16 +64,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['role'])) {
     </div>
 </body>
 </html>
-
-<script>
-function closeModal() {
-    document.getElementById("selectModal").style.display = "none";
-}
-
-window.onclick = function(event) {
-    const modal = document.getElementById("selectModal");
-    if (event.target === modal) {
-        modal.style.display = "none";
-    }
-}
-</script>
